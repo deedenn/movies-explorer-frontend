@@ -26,3 +26,43 @@
     padding-bottom: 30px;
 }
 
+@media screen and (max-width: 1140px) {
+  .promo__header {
+    width: 680px;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1065px) {
+  .promo {
+    padding: 140px 0 75px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo__right {
+    align-items: center;
+  }
+
+  .promo__header {
+    margin: 48px 0 22px 0;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .promo__header {
+    width: 300px;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -1.2px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .promo {
+    padding: 70px 0 30px;
+  }
+}

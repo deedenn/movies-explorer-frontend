@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './MenuLayer.css';
-import profile from '../../images/profile.svg';
 
 function MenuLayer({ onCloseDrawer }) {
   return (
@@ -33,7 +32,6 @@ function MenuLayer({ onCloseDrawer }) {
           <img
             className="menu-layer__profile"
             alt="Лого аккаунта"
-            src={profile}
           />
         </button>
       </div>
