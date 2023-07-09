@@ -10,7 +10,7 @@ function SearchForm() {
             <button className="searchform__btn link" type="submit"></button>
           </div>
           <fieldset className="searchform__filter">
-            <input className="searchform__checkbox" type="checkbox"></input>
+            <input required className="searchform__checkbox" type="checkbox"></input>
             <h3 className="searchform__text">Короткометражки</h3>
           </fieldset>
         </div>

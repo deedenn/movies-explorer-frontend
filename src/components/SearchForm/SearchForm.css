@@ -35,7 +35,7 @@
 
 @media screen and (max-width: 1130px) {
   .searchform__field {
-    max-width: 780px;
+    max-width: 75%;
   }
 }
 
@@ -54,7 +54,7 @@
 
 .searchform__input:focus {
   min-height: 40px;
-  border-bottom: 2px solid #F4F4F4;
+  border-bottom: 0.7px solid grey;
 }
 
 .searchform__btn {
@@ -68,6 +68,10 @@
   margin-right: 6px;
   padding: 0;
   background-size: cover;
+}
+
+.searchform__btn:hover {
+  background-color: #a0a0a0;
 }
 
 .searchform__line {
@@ -131,12 +135,12 @@
   }
 
   .searchform__field {
-    max-width: 500px;
+    max-width: 65%;
   }
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .searchform {
     width: 100%;
   }
@@ -155,5 +159,11 @@
 
   .searchform__text::after {
     right: 112px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .searchform__field {
+    width: 52%;
   }
 }

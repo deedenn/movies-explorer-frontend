@@ -4,7 +4,6 @@
   align-items: center;
   width: 360px;
   height: 319px;
-  border-radius: 6px;
   background-color: #fdfdfd;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
 }
@@ -12,7 +11,6 @@
 .moviesCard__header {
   display: flex;
   padding: 14px;
-
   justify-content: space-between;
 }
 

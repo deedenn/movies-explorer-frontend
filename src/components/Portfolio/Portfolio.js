@@ -11,7 +11,7 @@ function Portfolio() {
             <a
               className="portfolio__link"
               rel="noreferrer"
-              href="https://github.com/deedenn/how-to-learn/index.html"
+              href="https://deedenn.github.io/how-to-learn/"
               target="_blank">
               Статичный сайт
               <img className="portfolio__arrow" alt="Стрелка" src={arrow}/>
@@ -31,7 +31,7 @@ function Portfolio() {
             <a
               className="portfolio__link"
               rel="noreferrer"
-              href="https://deedenn.github.io/mesto-react/"
+              href="https://deedenn.github.io/mesto/"
               target="_blank">
               Одностраничное приложение
               <img className="portfolio__arrow" alt="Стрелка"  src={arrow}/>

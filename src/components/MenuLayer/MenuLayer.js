@@ -29,10 +29,6 @@ function MenuLayer({ onCloseDrawer }) {
           <Link to="/profile" className="menu-layer__span">
             Аккаунт
           </Link>
-          <img
-            className="menu-layer__profile"
-            alt="Лого аккаунта"
-          />
         </button>
       </div>
     </div>

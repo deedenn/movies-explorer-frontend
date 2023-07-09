@@ -1,32 +1,29 @@
 .techs {
-    padding: 0 70px 0 70px;
-    display: flex;
-    flex-direction: column;
-    background-color: #F5F5F5;
+  background-color: #F5F5F5;
+  padding: 100px 70px 100px;
 }
 
 .techs__header {
-    padding-bottom: 26px;
-    margin: 100px 0 0 0;
-    font-family: inherit;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 27px;
-    letter-spacing: -0.04em;
-    border-bottom: 1px solid #000000;
+  margin: 0;
+  padding-bottom: 23px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  border-bottom: 1px solid #000000;
 }
 
 .techs__description {
-    max-width: 460px;
-    text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    letter-spacing: -0.04em;
-    margin: 0 0 100px 0;
+  width: 460px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 26px auto 0;
+  letter-spacing: -0.56px;
+  text-align: center;
 }
 
 .techs__title {
@@ -47,48 +44,44 @@
 }
 
 .techs__list {
-    list-style: none;
-    display: flex;
-    column-gap: 10px;
-    padding: 0;
-    margin: 0 0 100px 0;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(85px, 1fr));
+  grid-template-rows: auto;
+  width: 700px;
+  gap: 10px 10px;
+  margin: 100px auto 0;
+  padding: 0;
 }
 
 .techs__item {
-    background: #E8E8E8;
-    border-radius: 10px;
-    width: 90px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    letter-spacing: -0.04em;
-    padding: 21px 0;
+  display: flex;
+  align-items: center;
+  width: 90px;
+  height: 60px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.56px;
+  justify-content: center;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  margin: 0 5px 0;
 }
 
-@media screen and (max-width: 810px) {
+
+
+  @media screen and (max-width: 800px) {
     .techs {
-      background-color: #f5f5f5;
-      padding: 90px 50px 90px;
-    }
-  
-    .techs__description {
-      font-size: 12px;
-      line-height: 18px;
-      letter-spacing: -0.48px;
-      margin: 22px auto 0;
+      padding: 90px 20px 90px;
     }
   
     .techs__list {
-      margin: 83px 0 0;
-      width: 400px;
-    }
-  
-    .techs__item {
-      font-size: 12px;
-      letter-spacing: -0.48px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(85px, 1fr));
+      grid-template-rows: auto;
+      margin: 83px auto 0;
+      width: 300px;
     }
   }
 

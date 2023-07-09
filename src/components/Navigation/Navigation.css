@@ -24,6 +24,7 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 18px;
+  color: black;
   text-align: right;
   padding: 0;
   margin: 0;
@@ -65,14 +66,17 @@
 
 .header__menu {
   display: none;
-  cursor: pointer;
-  margin-right: 8px;
-  margin-top: 1px;
+  background-image: url(../../images/icon__menu.svg);
+  width: 44px;
+  height: 44px;
+  background-color: white;
+  border: none;
 }
 
 @media screen and (max-width: 769px) {
   .header__menu {
     display: block;
+    color: black;
   }
 }
 

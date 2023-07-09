@@ -42,7 +42,7 @@ function Login(props) {
           </button>
           <p className="register__registration">
             Ещё не зарегистрированы?{' '}
-            <Link to="/registerup" className="register__enter">
+            <Link to="/signup" className="register__enter">
               Регистрация
             </Link>
           </p>
