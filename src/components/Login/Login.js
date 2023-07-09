@@ -1,17 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Register/Register.css';
 import logo from '../../images/logo.svg';
-
 function Login(props) {
   return (
-    <section className="sign">
-      <div className="sign__zone">
-        <img className="sign__logo" alt="Лого" src={logo} />
-        <h2 className="sign__header">Рады видеть!</h2>
-        <form className="sign__form" noValidate>
-          <p className="sign__input-header">E-mail</p>
+    <section className="register">
+      <div className="register__zone">
+        <img className="register__logo" alt="Лого" src={logo} />
+        <h2 className="register__header">Рады видеть!</h2>
+        <form className="register__form" noValidate>
+          <label htmlFor="email" className="register__input-header">
+            E-mail
+          </label>
           <input
-            className="sign__form-input"
+            className="register__form-input"
             name="email"
             id="email"
             autoComplete="off"
@@ -20,10 +22,12 @@ function Login(props) {
             maxLength="70"
             required
           />
-          <span className="sign__input-error">Какая-то ошибка...</span>
-          <p className="sign__input-header">Пароль</p>
+          <span className="register__input-error">Какая-то ошибка...</span>
+          <label htmlFor="password" className="register__input-header">
+            Пароль
+          </label>
           <input
-            className="sign__form-input"
+            className="register__form-input"
             name="password"
             id="password"
             autoComplete="off"
@@ -32,16 +36,18 @@ function Login(props) {
             maxLength="40"
             required
           />
-          <span className="sign__input-error"></span>
+          <span className="register__input-error">Ошибка....</span>
+          <button className="register__button register__button_login" type="submit">
+            Войти
+          </button>
+          <p className="register__registration">
+            Ещё не зарегистрированы?{' '}
+            <Link to="/registerup" className="register__enter">
+              Регистрация
+            </Link>
+          </p>
         </form>
       </div>
-      <button className="sign__button sign__button_login" type="submit">
-        Войти
-      </button>
-      <p className="sign__register">
-        Ещё не зарегистрированы?
-        <span className="sign__enter"> Регистрация</span>
-      </p>
     </section>
   );
 }
