@@ -1,17 +1,19 @@
-import "./MoviesCardList.css";
-import { useEffect, useState } from "react";
-import MoviesCard from "../MoviesCard/MoviesCard";
+import React from 'react';
+import './MoviesCardList.css';
+import { moviesArray } from '../../utils/movies.js';
+import MoviesCard from '../MoviesCard/MoviesCard';
+import MoviesBtn from '../MoviesBtn/MoviesBtn';
 
 function MoviesCardList() {
-
   return (
-    <section className="movieslist">
-      <ul className="movieslist__items"></ul>
-      <button className="movieslist__morebtn link" type="button">
-        Ещё
-      </button>
+    <section className="movies-card-list">
+      <ul className="movies-card-list__elements">
+        {moviesArray.map((item) => {
+          return <MoviesCard movie={item} key={item.movieId} />;
+        })}
+      </ul>
+      <MoviesBtn />
     </section>
   );
 }
-
 export default MoviesCardList;
