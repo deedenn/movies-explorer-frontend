@@ -13,10 +13,10 @@
     font-size: 22px;
     line-height: 27px;
     letter-spacing: -0.04em;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #000000;
   }
 
-  .about__cont {
+  .about__container {
     margin: 70px 0 0 0;
     display: flex;
     justify-content: space-between;
