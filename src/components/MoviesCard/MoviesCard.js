@@ -19,7 +19,7 @@ function MoviesCard() {
           <p className="moviesCard__duration">27 минут</p>
         </div>
         {path === "/movies" && <button onClick={saveMovies} className={`moviesCard__btn ${isSaved && "moviesCard__btn_saved"} link`} type="button"></button>}
-        {path === "/saved-movies" && <button className="moviesCard__btn_delete link" type="button"></button>}
+        {path === "/saved-movies" && <button className="moviesCard__btn_check moviesCard__btn_saved link" type="button"></button>}
       </div>
       <img className="moviesCard__img" src='https://i.ibb.co/6w1n7zk/pic-COLOR-pic-8.jpg' alt="В погоне за Бенкси" />
 

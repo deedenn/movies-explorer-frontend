@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     background-color: #F5F5F5;
+    margin: 0 40px;
+    border-radius: 10px;
 }
 
 .navtab__btn {
@@ -14,4 +16,11 @@
     font-size: 12px;
     line-height: 16px;
     margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1065px) {
+    .navtab__container {
+        margin: 0 20px;
+        padding-top: 180px;
+    }
 }

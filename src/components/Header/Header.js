@@ -6,31 +6,31 @@ import { useLocation, Link } from 'react-router-dom';
 
 function Header() {
 
-    const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-    return (
-        <header className='header'>
-        <Link to="/" className="header__logo-link">
-          <img
-            className='header__logo'
-            alt="Логотип 'Movies explorer'"
-            src={logo}
-          />
-        </Link>
-        {pathname === '/' ? (
-          <nav className="header__btns">
-            <Link to="/signup" className="header__button-left">
-              Регистрация
-            </Link>
-            <Link to="signin" className="header__button-right" type="submit">
-              Войти
-            </Link>
-          </nav>
-        ) : (
-          <Navigation />
-        )}
-      </header>
-    )
+  return (
+    <header className='header'>
+      <Link to="/" className="header__logo-link">
+        <img
+          className='header__logo'
+          alt="Логотип 'Movies explorer'"
+          src={logo}
+        />
+      </Link>
+      {pathname === '/' ? (
+        <nav className="header__btns">
+          <Link to="/signup" className="header__button-left">
+            Регистрация
+          </Link>
+          <Link to="signin" className="header__button-right" type="submit">
+            Войти
+          </Link>
+        </nav>
+      ) : (
+        <Navigation />
+      )}
+    </header>
+  )
 }
 
 export default Header;
