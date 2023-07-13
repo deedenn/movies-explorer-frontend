@@ -1,0 +1,39 @@
+.movieslist {
+    padding: 0 70px 70px 70px;
+    margin: 70px 0 0 0;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .movieslist {
+      padding: 0 30px 70px 30px;
+      margin: 82px 0 0 0;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .movieslist {
+      margin: 50px 0 0 0;
+      padding: 0 10px 70px 10px;
+    }
+  }
+  
+  .movieslist__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 39px 24px;
+  }
+  
+  @media screen and (max-width: 769px) {
+    .movieslist__items {
+      gap: 26px 30px;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .movieslist__items {
+      gap: 14px;
+    }
+  }
