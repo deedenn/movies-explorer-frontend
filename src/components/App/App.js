@@ -13,6 +13,10 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 
+import Auth from '../../utils/api/auth';
+import MainApi from '../../utils/api/MainApi';
+import MoviesApi from '../../utils/api/MoviesApi';
+
 function App() {
   const { pathname } = useLocation();
 
