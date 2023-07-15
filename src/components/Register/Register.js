@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import logo from '../../images/logo.svg';
 import { validateEmail, validateName } from '../../utils/validation';
@@ -6,11 +7,18 @@ import { useFormValidation } from '../../hooks/useFormValidation';
 
 function Register(props) {
 
+  const navigate = useNavigate();
   const { values, handleChange, errors, isValid } = useFormValidation();
   const handleSubmit = (e) => {
     e.preventDefault();
     props.onRegister(values);
   };
+
+  React.useEffect(() => {
+    if (props.loggedIn) {
+      navigate('/movies');
+    }
+  }, [props.loggedIn, navigate]);
 
   return (
     <section className="register">
@@ -78,22 +86,30 @@ function Register(props) {
               }`}>
             {errors.password}
           </span>
+          <span
+            className={`register__api-error ${props.serverError ? '' : 'register__api-error_disabled'
+              }`}>
+            {props.serverError.error}
+          </span>
         </form>
       </div>
+
       <button
 
         className={`register__button ${isValid &&
-            validateEmail(values.email).activeButton &&
-            validateName(values.name).activeButton
-            ? ''
-            : 'register__button_disabled'
+          validateEmail(values.email).activeButton &&
+          validateName(values.name).activeButton
+          ? ''
+          : 'register__button_disabled'
           }`}
         type="submit">
         Зарегистрироваться
       </button>
       <p className="register__registration">
         Уже зарегистрированы?
-        <span className="register__enter"> Войти</span>
+        <Link to="/signin" className="register__enter">
+          Войти
+        </Link>
       </p>
     </section>
   );

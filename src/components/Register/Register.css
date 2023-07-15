@@ -182,3 +182,21 @@
 .register__enter:active {
   opacity: 1;
 }
+
+.sign__api-error {
+  color: #ee3465;
+  font-weight: 400;
+  font-size: 12px;
+  height: 13px;
+  line-height: 13px;
+  padding: 0;
+  display: block;
+  width: 100%;
+  margin-top: 97px;
+  text-align: center;
+  opacity: 1;
+}
+
+.sign__api-error_disabled {
+  opacity: 0;
+}
