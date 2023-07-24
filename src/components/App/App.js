@@ -34,11 +34,11 @@ function App() {
   // блок подключения к апи
 
   const auth = new Auth({
-    baseUrl: 'https://api.mymovie.nomoredomains.rocks',
+    baseUrl: 'http://localhost:3001',
   });
 
   const mainApi = new MainApi({
-    url: 'https://api.mymovie.nomoredomains.rocks',
+    url: 'http://localhost:3001',
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -107,7 +107,6 @@ function App() {
     setLoggedIn(false);
   };
 
-
   React.useEffect(() => {
     loggedIn &&
       Promise.all([
@@ -126,7 +125,7 @@ function App() {
           console.error(`Ошибка: ${err}`);
           setIsMoviesError(true);
         });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loggedIn]);
 
   //обновление данных пользователя
@@ -145,7 +144,57 @@ function App() {
       });
   };
 
+  // добавление и удаление фильмов
 
+  const handleToggleLikeMovie = (movie, isLiked, id) => {
+    if (isLiked) {
+      handleRemoveMovie(id);
+    } else {
+      mainApi
+        .saveMovie(movie)
+        .then((newLikedMovie) => {
+          setFavoriteMovies([...favoriteMovies, newLikedMovie]);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  };
+
+  const handleRemoveMovie = (id) => {
+    mainApi
+      .deleteMovie(id)
+      .then(() => {
+        setFavoriteMovies(favoriteMovies.filter((m) => m._id !== id));
+      })
+      .catch((err) => {
+        console.error(`Ошибка: ${err}`);
+      });
+
+    //чтобы корректно удалялась карточка из избранного массива
+    const filteredFavoriteMovies = JSON.parse(
+      localStorage.getItem('searchedMoviesFavorite'),
+    );
+
+    if (filteredFavoriteMovies) {
+      const newFilteredFavoriteMoviesArr = filteredFavoriteMovies.filter(
+        (movie) => movie._id !== id,
+      );
+
+      localStorage.setItem(
+        'searchedMoviesFavorite',
+        JSON.stringify(newFilteredFavoriteMoviesArr),
+      );
+    }
+  };
+
+  const localFavoriteMovies = localStorage.getItem('savedMoviesArray');
+
+  React.useEffect(() => {
+    if (localFavoriteMovies) {
+      setFavoriteMovies(JSON.parse(localFavoriteMovies));
+    }
+  }, [localFavoriteMovies]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -165,9 +214,20 @@ function App() {
                   element={Movies}
                   loggedIn={loggedIn}
                   movies={movies}
+                  favoriteMovies={favoriteMovies}
+                  onToggleLike={handleToggleLikeMovie}
+                  moviesError={isMoviesError}
                 />
               } />
-              <Route path="/saved-movies" element={<SavedMovies />} />
+              <Route path="/saved-movies" element={
+                <ProtectedRoute
+                  element={SavedMovies}
+                  loggedIn={loggedIn}
+                  onRemoveMovie={handleRemoveMovie}
+                  favoriteMovies={favoriteMovies}
+                />
+              }
+              />
               <Route path="/profile" element={
                 <ProtectedRoute
                   element={Profile}

@@ -11,6 +11,7 @@ function Register(props) {
   const { values, handleChange, errors, isValid } = useFormValidation();
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('регистрация пройдена');
     props.onRegister(values);
   };
 
@@ -91,11 +92,9 @@ function Register(props) {
               }`}>
             {props.serverError.error}
           </span>
-        </form>
-      </div>
+
 
       <button
-
         className={`register__button ${isValid &&
           validateEmail(values.email).activeButton &&
           validateName(values.name).activeButton
@@ -111,6 +110,8 @@ function Register(props) {
           Войти
         </Link>
       </p>
+      </form>
+      </div>
     </section>
   );
 }

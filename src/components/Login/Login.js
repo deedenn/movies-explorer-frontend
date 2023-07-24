@@ -19,7 +19,7 @@ function Login(props) {
       return;
     }
 
-    console.log('авторизация!');
+    console.log('авторизация пройдена');
     props.onLogin(values);
   };
 

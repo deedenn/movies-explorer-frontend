@@ -1,7 +1,6 @@
 import React from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import moviesData from "../../utils/moviesData";
 import Preloader from '../Preloader/Preloader';
 import {
   SHORT_MOVIE_DURATION,
@@ -144,7 +143,6 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleFavorite }) {
     }
   };
 
-
   return (
     <section className="movies">
       <SearchForm
@@ -163,10 +161,10 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleFavorite }) {
       ) : isLoading ? (
         <Preloader />
       ) : notFoundError ? (
-        <p className="movies__not-found">Ничего не найдено 😢</p>
+        <p className="movies__not-found">Ничего не найдено</p>
       ) : (
         <MoviesCardList
-          movies={renderMovies}
+          movies={movies}
           favoriteMovies={favoriteMovies}
           onToggleLike={onToggleFavorite}
           moviesError={moviesError}
