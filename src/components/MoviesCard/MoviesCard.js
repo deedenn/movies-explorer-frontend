@@ -8,12 +8,11 @@ function MoviesCard({ movie, favoriteMovies, onToggleLike, onRemoveMovie }) {
   const location = useLocation();
   const path = location.pathname;
 
-  //чтобы взять айди из бэкенда и прокинуть в функцию удаления
-  const likedMovie = favoriteMovies
+   const likedMovie = favoriteMovies
     ? favoriteMovies.find((item) => item.movieId === movie.id)
     : '';
 
-  // Определяем, есть ли у карточки с фильмом уже лайк
+  // Есть ли у карточки лайк
   const isLiked = favoriteMovies
     ? favoriteMovies.some((i) => i.movieId === movie.id)
     : false;

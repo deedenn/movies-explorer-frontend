@@ -18,8 +18,6 @@ function Login(props) {
     if (!values.email || !values.password) {
       return;
     }
-
-    console.log('авторизация пройдена');
     props.onLogin(values);
   };
 

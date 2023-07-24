@@ -37,7 +37,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
     }
   };
 
-  //Функция фильтр
+  //Функция фильтра
   const handleFilterMovies = (inputValue, isCheckedState) => {
     localStorage.setItem('inputVal', JSON.stringify(inputValue));
     localStorage.setItem('checkboxState', JSON.stringify(isCheckedState));
@@ -123,7 +123,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
     };
   }, [handleResize]);
 
-  //рендер фильмов
+  //рендеринг фильмов
   const renderMovies = React.useMemo(() => {
     const paginationCounter =
       screenWidth < WINDOW_WIDTH_MEDIUM
