@@ -82,7 +82,7 @@ function SavedMovies({favoriteMovies, onRemoveMovie}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchedMovies, localCheckbox, localInputVal]);
 
-  //чтобы связать массивы сохраненных и отфильтрованных
+  //связка массивов сохраненных и отфильтрованных
   React.useEffect(() => {
     if (searchedMovies) {
       setFilteredMovies(JSON.parse(searchedMovies));
@@ -104,7 +104,7 @@ function SavedMovies({favoriteMovies, onRemoveMovie}) {
         <MoviesCardList movies={filteredMovies} onRemoveMovie={onRemoveMovie} />
       ) : (
         notFoundError && (
-          <p className="movies__not-found">Ничего не найдено</p>
+          <p className="saved-movies__not-found">Ничего не найдено</p>
         )
       )}
     </section>

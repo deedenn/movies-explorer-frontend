@@ -34,11 +34,11 @@ function App() {
   // блок подключения к апи
 
   const auth = new Auth({
-    baseUrl: 'http://localhost:3001',
+    baseUrl: 'https://api.mymovie.nomoredomains.rocks',
   });
 
   const mainApi = new MainApi({
-    url: 'http://localhost:3001',
+    url: 'https://api.mymovie.nomoredomains.rocks',
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -151,7 +151,7 @@ function App() {
       handleRemoveMovie(id);
     } else {
       mainApi
-        .saveMovie(movie)
+        .favoriteMovie(movie)
         .then((newLikedMovie) => {
           setFavoriteMovies([...favoriteMovies, newLikedMovie]);
         })

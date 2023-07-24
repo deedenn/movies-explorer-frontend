@@ -37,3 +37,8 @@
       gap: 14px;
     }
   }
+
+  .saved-movies__not-found {
+    align-self: center;
+    justify-self: center;
+  }

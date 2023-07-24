@@ -18,10 +18,6 @@ function MoviesCard({ movie, favoriteMovies, onToggleLike, onRemoveMovie }) {
     ? favoriteMovies.some((i) => i.movieId === movie.id)
     : false;
 
-  //Класс для лайка в отдельной переменной
-  const cardLikeButtonClassName = `movies-card__icon ${isLiked ? 'movies-card__icon_active' : ''
-    }`;
-
   const handleLikeClick = () => {
     onToggleLike(movie, isLiked, likedMovie?._id);
   };
@@ -30,24 +26,17 @@ function MoviesCard({ movie, favoriteMovies, onToggleLike, onRemoveMovie }) {
     onRemoveMovie(movie._id);
   };
 
-
-  const [isSaved, setIsSaved] = useState(false);
-
-  const saveMovies = () => {
-    setIsSaved(!isSaved);
-  };
-
   return (
     <li className="moviesCard">
-
       <div className="moviesCard__header">
-
         <div className="moviesCard__container">
           <h2 className="moviesCard__title">{movie.nameRU}</h2>
           <p className="moviesCard__duration">{timeConverter(movie.duration)}</p>
         </div>
-        {path === "/movies" && <button onClick={saveMovies} className={`moviesCard__btn ${isSaved && "moviesCard__btn_saved"} link`} type="button"></button>}
-        {path === "/saved-movies" && <button className="moviesCard__btn_check moviesCard__btn_saved link" type="button"></button>}
+        {path === "/movies" && <button onClick={handleLikeClick} className={`moviesCard__btn ${isLiked && "moviesCard__btn_saved"} link`} type="button" alt="Like" />}
+        {path === "/saved-movies" && (
+          <button onClick={handleDeleteClick} className="moviesCard__btn_check moviesCard__btn_saved link" type="button" />
+        )}
       </div>
       <Link
         className="moviesCard__trailer-link"

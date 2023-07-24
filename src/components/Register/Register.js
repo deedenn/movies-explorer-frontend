@@ -11,7 +11,6 @@ function Register(props) {
   const { values, handleChange, errors, isValid } = useFormValidation();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('регистрация пройдена');
     props.onRegister(values);
   };
 

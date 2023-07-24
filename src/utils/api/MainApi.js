@@ -52,7 +52,7 @@ export default class MainApi {
   }
 
   //добавление в избранное
-  favouriteMovie(movie) {
+  favoriteMovie(movie) {
     return this._request(`${this._url}/movies`, {
       method: 'POST',
       body: JSON.stringify({

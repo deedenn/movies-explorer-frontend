@@ -13,7 +13,7 @@ import {
   WINDOW_WIDTH_MEDIUM,
 } from '../../utils/constants';
 
-function Movies({ movies, moviesError, favoriteMovies, onToggleFavorite }) {
+function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
 
   const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [isChecked, setIsChecked] = React.useState(false);
@@ -166,7 +166,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleFavorite }) {
         <MoviesCardList
           movies={movies}
           favoriteMovies={favoriteMovies}
-          onToggleLike={onToggleFavorite}
+          onToggleLike={onToggleLike}
           moviesError={moviesError}
         />
       )}
