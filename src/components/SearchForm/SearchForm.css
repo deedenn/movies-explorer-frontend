@@ -174,3 +174,30 @@
     font-size: 11px;
   }
 }
+
+.search__span {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ee3465;
+  margin: 6px 0 7px 0;
+  display: block;
+  max-width: 250px;
+  height: 12px;
+  opacity: 0;
+  margin-left: 0px;
+}
+
+.search__span_active {
+  opacity: 1;
+  padding-left: 16px;
+}
+
+.search__container-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: -26px;
+}

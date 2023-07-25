@@ -1,4 +1,4 @@
-const moviesData = [
+export const moviesData = [
   {
     movieId: 1,
     nameRU: '33 слова о дизайне',
@@ -72,5 +72,3 @@ const moviesData = [
     thumbnail: 'https://i.ibb.co/GQG1YJ9/pic-COLOR-pic-11.jpg',
   },
 ];
-
-export default moviesData;

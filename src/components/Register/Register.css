@@ -105,6 +105,10 @@
   max-width: 396px;
 }
 
+.register__input-error_active {
+  opacity: 1;
+}
+
 .register__button {
   max-width: 396px;
   width: 100%;
@@ -120,6 +124,15 @@
   font-size: 14px;
   text-align: center;
   border: none;
+}
+
+.register__button_disabled {
+  cursor: not-allowed;
+  background: #f8f8f8;
+  color: #c2c2c2;
+  border-radius: 3px;
+  border: none;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 451px) {
@@ -168,4 +181,22 @@
 }
 .register__enter:active {
   opacity: 1;
+}
+
+.register__api-error {
+  color: #ee3465;
+  font-weight: 400;
+  font-size: 12px;
+  height: 13px;
+  line-height: 13px;
+  padding: 0;
+  display: block;
+  width: 100%;
+  margin-top: 97px;
+  text-align: center;
+  opacity: 1;
+}
+
+.register__api-error_disabled {
+  opacity: 0;
 }
