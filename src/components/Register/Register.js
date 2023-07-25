@@ -91,7 +91,7 @@ function Register(props) {
           <span
             className={`register__api-error ${props.serverError ? '' : 'register__api-error_disabled'
               }`}>
-            {props.serverError.error}
+            {props.serverError?.error}
           </span>
 
 

@@ -21,6 +21,11 @@ function Login(props) {
     props.onLogin(values);
   };
 
+  const handleGoSignup = () => {
+    props.setServerError({});
+    navigate('/signup');
+  }
+
   useEffect(() => {
     const jwt = localStorage.getItem('token');
     if (jwt) {
@@ -77,9 +82,8 @@ function Login(props) {
             {errors.password}
           </span>
           <span
-            className={`register__api-error ${
-              props.serverError ? '' : 'register__api-error_disabled'
-            }`}>
+            className={`register__api-error ${props.serverError ? '' : 'register__api-error_disabled'
+              }`}>
             {props.serverError.error}
           </span>
 
@@ -94,7 +98,7 @@ function Login(props) {
           </button>
           <p className="register__registration">
             Ещё не зарегистрированы?{' '}
-            <Link to="/signup" className="register__enter">
+            <Link onClick={handleGoSignup} to="/signup" className="register__enter">
               Регистрация
             </Link>
           </p>

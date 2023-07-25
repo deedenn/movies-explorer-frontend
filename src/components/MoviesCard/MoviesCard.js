@@ -8,7 +8,7 @@ function MoviesCard({ movie, favoriteMovies, onToggleLike, onRemoveMovie }) {
   const location = useLocation();
   const path = location.pathname;
 
-   const likedMovie = favoriteMovies
+  const likedMovie = favoriteMovies
     ? favoriteMovies.find((item) => item.movieId === movie.id)
     : '';
 

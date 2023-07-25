@@ -38,8 +38,6 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
     }
   };
 
-  console.log(isChecked);
-
   //Функция фильтра
   const handleFilterMovies = (inputValue, isCheckedState) => {
     localStorage.setItem('inputVal', JSON.stringify(inputValue));
@@ -47,6 +45,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
 
     setNotFoundError(false);
     setIsLoading(true);
+    setNextMovies(0);
 
     //прелоадер
     setTimeout(() => {
@@ -72,7 +71,6 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
             movie.nameEN.toLowerCase().includes(inputValue.toLowerCase())
           );
         });
-        console.log(newFilteredArray);
         setFilteredMovies(newFilteredArray);
         localStorage.setItem(
           'searchedMovies',
@@ -141,7 +139,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
   const handleClickButtonMore = () => {
     if (screenWidth < WINDOW_WIDTH_MAX) {
       setNextMovies((prev) => prev + MIN_ADDED_CARDS);
-    } else if (screenWidth >= WINDOW_WIDTH_MAX) {
+    } else {
       setNextMovies((prev) => prev + MAX_ADDED_CARDS);
     }
   };
@@ -167,7 +165,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
         <p className="movies__not-found">Ничего не найдено</p>
       ) : (
         <MoviesCardList
-          movies={filteredMovies}
+          movies={renderMovies}
           favoriteMovies={favoriteMovies}
           onToggleLike={onToggleLike}
           moviesError={moviesError}

@@ -18,7 +18,7 @@ function MoviesCardList({
               favoriteMovies={favoriteMovies}
               onRemoveMovie={onRemoveMovie}
               movie={item}
-              key={item.id}
+              key={item.id || item._id}
             />
           );
         })}

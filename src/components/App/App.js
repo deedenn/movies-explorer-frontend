@@ -133,7 +133,6 @@ function App() {
     mainApi
       .updateUserInfo(data)
       .then((data) => {
-        console.log('data update:', data);
         setCurrentUser(data);
         setIsOkRequest(true);
       })
@@ -246,6 +245,7 @@ function App() {
                 onLogin={onLogin}
                 loggedIn={loggedIn}
                 serverError={serverError}
+                setServerError={setServerError}
               />} />
               <Route path="*" element={<NotFound loggedIn={loggedIn} />} />
             </Routes>

@@ -14,7 +14,6 @@ function Profile({ onSignOut, onUpdateProfile, serverError, isOkRequest }) {
   const [showSuccessText, setShowSuccessText] = React.useState(false);
 
   const handleSubmit = (e) => {
-    console.log(values);
     e.preventDefault();
     onUpdateProfile(values);
     setShowSaveBtn(false);
@@ -118,7 +117,7 @@ function Profile({ onSignOut, onUpdateProfile, serverError, isOkRequest }) {
             
           )}
          
-          <Link to="/signin" className="profile__exit" onClick={onSignOut}>
+          <Link to="/" className="profile__exit" onClick={onSignOut}>
             Выйти из аккаунта
           </Link>
 
