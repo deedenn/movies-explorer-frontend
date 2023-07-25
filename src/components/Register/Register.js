@@ -23,7 +23,9 @@ function Register(props) {
   return (
     <section className="register">
       <div className="register__zone">
-        <img className="register__logo" alt="Лого" src={logo} />
+        <Link to="/" className="register__logo-link">
+          <img className="register__logo" alt="Лого" src={logo} />
+        </Link>
         <h2 className="register__header">Добро пожаловать!</h2>
         <form className="register__form" onSubmit={handleSubmit} noValidate>
           <label htmlFor="name" className="register__input-header">
@@ -93,23 +95,23 @@ function Register(props) {
           </span>
 
 
-      <button
-        className={`register__button ${isValid &&
-          validateEmail(values.email).activeButton &&
-          validateName(values.name).activeButton
-          ? ''
-          : 'register__button_disabled'
-          }`}
-        type="submit">
-        Зарегистрироваться
-      </button>
-      <p className="register__registration">
-        Уже зарегистрированы?
-        <Link to="/signin" className="register__enter">
-          Войти
-        </Link>
-      </p>
-      </form>
+          <button
+            className={`register__button ${isValid &&
+              validateEmail(values.email).activeButton &&
+              validateName(values.name).activeButton
+              ? ''
+              : 'register__button_disabled'
+              }`}
+            type="submit">
+            Зарегистрироваться
+          </button>
+          <p className="register__registration">
+            Уже зарегистрированы?
+            <Link to="/signin" className="register__enter">
+              Войти
+            </Link>
+          </p>
+        </form>
       </div>
     </section>
   );

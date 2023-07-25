@@ -183,7 +183,7 @@
   opacity: 1;
 }
 
-.sign__api-error {
+.register__api-error {
   color: #ee3465;
   font-weight: 400;
   font-size: 12px;
@@ -197,6 +197,6 @@
   opacity: 1;
 }
 
-.sign__api-error_disabled {
+.register__api-error_disabled {
   opacity: 0;
 }

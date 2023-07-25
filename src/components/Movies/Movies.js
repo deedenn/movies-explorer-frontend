@@ -2,6 +2,7 @@ import React from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from '../Preloader/Preloader';
+import './Movies.css';
 import {
   SHORT_MOVIE_DURATION,
   MIN_ADDED_CARDS,
@@ -37,6 +38,8 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
     }
   };
 
+  console.log(isChecked);
+
   //Функция фильтра
   const handleFilterMovies = (inputValue, isCheckedState) => {
     localStorage.setItem('inputVal', JSON.stringify(inputValue));
@@ -69,6 +72,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
             movie.nameEN.toLowerCase().includes(inputValue.toLowerCase())
           );
         });
+        console.log(newFilteredArray);
         setFilteredMovies(newFilteredArray);
         localStorage.setItem(
           'searchedMovies',
@@ -126,8 +130,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
   //рендеринг фильмов
   const renderMovies = React.useMemo(() => {
     const paginationCounter =
-      screenWidth < WINDOW_WIDTH_MEDIUM
-        ? SHOWED_CARDS_MIN
+      screenWidth < WINDOW_WIDTH_MEDIUM ? SHOWED_CARDS_MIN
         : screenWidth < WINDOW_WIDTH_MAX
           ? SHOWED_CARDS_MEDIUM
           : SHOWED_CARDS_MAX;
@@ -164,7 +167,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
         <p className="movies__not-found">Ничего не найдено</p>
       ) : (
         <MoviesCardList
-          movies={movies}
+          movies={filteredMovies}
           favoriteMovies={favoriteMovies}
           onToggleLike={onToggleLike}
           moviesError={moviesError}
@@ -177,7 +180,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
             onClick={handleClickButtonMore}
             className="movies__button"
             type="button">
-            Ещё
+            Еще
           </button>
         ) : (
           ''

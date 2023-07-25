@@ -94,3 +94,29 @@
     margin: 14px 0;
   }
 }
+
+.moviesCard__btn-delete {
+  cursor: pointer;
+  border: none;
+  box-sizing: border-box;
+  background: url('../../images/delete.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #efefef;
+  border: none;
+  opacity: 1;
+  transition: all 0.5s linear;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.moviesCard__btn-delete:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 450px) {
+  .moviesCard__btn-delete {
+    margin: 0;
+  }
+}

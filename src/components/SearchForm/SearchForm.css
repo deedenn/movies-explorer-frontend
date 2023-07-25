@@ -192,4 +192,12 @@
 
 .search__span_active {
   opacity: 1;
+  padding-left: 16px;
+}
+
+.search__container-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: -26px;
 }

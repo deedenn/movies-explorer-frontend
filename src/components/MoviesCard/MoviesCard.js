@@ -34,7 +34,7 @@ function MoviesCard({ movie, favoriteMovies, onToggleLike, onRemoveMovie }) {
         </div>
         {path === "/movies" && <button onClick={handleLikeClick} className={`moviesCard__btn ${isLiked && "moviesCard__btn_saved"} link`} type="button" alt="Like" />}
         {path === "/saved-movies" && (
-          <button onClick={handleDeleteClick} className="moviesCard__btn_check moviesCard__btn_saved link" type="button" />
+          <button onClick={handleDeleteClick} className="moviesCard__btn moviesCard__btn-delete" type="button" />
         )}
       </div>
       <Link
